@@ -27,7 +27,6 @@ public class AdapterFactory {
         return new InMemoryDatabase();
     }
 
-
     private Seam getSeam() {
         if (System.getProperty("seam") != null) {
             String seam = System.getProperty("seam");
@@ -37,24 +36,6 @@ public class AdapterFactory {
         String defaultSeam = "model";
         System.err.println("No seam specified. Specify with -Dseam=<your seam name> Will default to " + defaultSeam);
         return new Seam(defaultSeam);
-    }
-
-    private Device getDevice() {
-        if (System.getProperty("device") != null) {
-            String device = System.getProperty("device");
-            return new Device(device);
-        }
-
-        throw new RuntimeException("No device specified. Specify with -Ddevice=<your device name>");
-    }
-
-    private Client getClient() {
-        if (System.getProperty("client") != null) {
-            String client = System.getProperty("client");
-            return new Client(client);
-        }
-
-        throw new RuntimeException("No client specified. Specify with -Dclient=<your client name>");
     }
 
     private DatabaseSeam getDatabaseSeam() {
