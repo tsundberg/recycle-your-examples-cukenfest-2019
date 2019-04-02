@@ -2,6 +2,8 @@ package se.thinkcode.cukenfestes.steps;
 
 import se.thinkcode.cukenfestes.Name;
 import se.thinkcode.cukenfestes.Task;
+import se.thinkcode.cukenfestes.steps.adaptors.ModelAdaptor;
+import se.thinkcode.cukenfestes.steps.adaptors.TodoAdapter;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfestes.steps;
+package se.thinkcode.cukenfestes.steps.adaptors;
 
 import se.thinkcode.cukenfestes.Name;
 import se.thinkcode.cukenfestes.Task;
