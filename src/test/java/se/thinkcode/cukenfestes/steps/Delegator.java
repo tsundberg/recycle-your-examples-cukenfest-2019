@@ -1,19 +1,26 @@
 package se.thinkcode.cukenfestes.steps;
 
+import se.thinkcode.cukenfestes.Name;
 import se.thinkcode.cukenfestes.Task;
 
 import java.util.List;
 
 class Delegator {
-    void createTodoList(String name) {
-        throw new RuntimeException("Not yet implemented");
+    private TodoAdapter adapter;
+    private Name currentOwner;
+
+    void createTodoList(String owner) {
+        currentOwner = new Name(owner);
+
+        adapter.createList(currentOwner);
     }
 
-    void addTask(String task) {
-        throw new RuntimeException("Not yet implemented");
+    void addTask(String description) {
+        Task task = new Task(description);
+        adapter.addTask(currentOwner, task);
     }
 
     List<Task> getTasks(String name) {
-        throw new RuntimeException("Not yet implemented");
+        return adapter.getTasks(currentOwner);
     }
 }
