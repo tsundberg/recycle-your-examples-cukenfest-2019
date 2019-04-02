@@ -6,11 +6,7 @@ time (
         exit
     fi
 
-    if ! ./gradlew cucumber -DSeam=model -Ddatabase=in-memory; then
-        exit
-    fi
-
-    if ! ./gradlew cucumber -DSeam=model -Ddatabase=sql; then
+    if ! ./gradlew cucumber -Dseam=model -Ddatabase=in-memory; then
         exit
     fi
 )
