@@ -9,6 +9,10 @@ class Delegator {
     private TodoAdapter adapter;
     private Name currentOwner;
 
+    Delegator() {
+        adapter = new ModelAdaptor();
+    }
+
     void createTodoList(String owner) {
         currentOwner = new Name(owner);
 
