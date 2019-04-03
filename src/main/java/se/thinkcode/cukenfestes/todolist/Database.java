@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfestes;
+package se.thinkcode.cukenfestes.todolist;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package se.thinkcode.cukenfestes.steps.adaptors;
 
-import se.thinkcode.cukenfestes.Database;
 import se.thinkcode.cukenfestes.infrastructure.InMemoryDatabase;
+import se.thinkcode.cukenfestes.todolist.Database;
 
 public class AdapterFactory {
 
@@ -12,6 +12,10 @@ public class AdapterFactory {
 
         if (seam.equals(new Seam("model"))) {
             return new ModelAdaptor(database);
+        }
+
+        if (seam.equals(new Seam("rest"))) {
+            return new RestAdaptor(database);
         }
 
         System.err.println("No seam, database, device, or client specified. Will default to model in memory");

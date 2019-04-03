@@ -1,23 +1,16 @@
 package se.thinkcode.cukenfestes.steps.adaptors;
 
-import se.thinkcode.cukenfestes.Database;
-import se.thinkcode.cukenfestes.Name;
-import se.thinkcode.cukenfestes.Task;
-import se.thinkcode.cukenfestes.TodoList;
-import se.thinkcode.cukenfestes.infrastructure.InMemoryDatabase;
+import se.thinkcode.cukenfestes.todolist.Database;
+import se.thinkcode.cukenfestes.todolist.Name;
+import se.thinkcode.cukenfestes.todolist.Task;
+import se.thinkcode.cukenfestes.todolist.TodoList;
 
 import java.util.List;
 
 public class ModelAdaptor implements TodoAdapter {
     private TodoList todoList;
-    private Database database;
 
     ModelAdaptor(Database database) {
-        this.database = database;
-    }
-
-    @Override
-    public void createList(Name owner) {
         todoList = new TodoList(database);
     }
 

@@ -1,9 +1,9 @@
 package se.thinkcode.cukenfestes.steps;
 
-import se.thinkcode.cukenfestes.Name;
-import se.thinkcode.cukenfestes.Task;
 import se.thinkcode.cukenfestes.steps.adaptors.AdapterFactory;
 import se.thinkcode.cukenfestes.steps.adaptors.TodoAdapter;
+import se.thinkcode.cukenfestes.todolist.Name;
+import se.thinkcode.cukenfestes.todolist.Task;
 
 import java.util.List;
 
@@ -18,8 +18,6 @@ class Delegator {
 
     void createTodoList(String owner) {
         currentOwner = new Name(owner);
-
-        adapter.createList(currentOwner);
     }
 
     void addTask(String description) {
@@ -27,7 +25,8 @@ class Delegator {
         adapter.addTask(currentOwner, task);
     }
 
-    List<Task> getTasks(String name) {
-        return adapter.getTasks(currentOwner);
+    List<Task> getTasks(String ownerName) {
+        Name owner = new Name(ownerName);
+        return adapter.getTasks(owner);
     }
 }

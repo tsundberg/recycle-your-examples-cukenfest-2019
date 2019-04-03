@@ -9,4 +9,8 @@ time (
     if ! ./gradlew cucumber -Dseam=model -Ddatabase=in-memory; then
         exit
     fi
+
+    if ! ./gradlew cucumber -Dseam=rest -Ddatabase=in-memory; then
+        exit
+    fi
 )

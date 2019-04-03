@@ -1,11 +1,15 @@
-package se.thinkcode.cukenfestes;
+package se.thinkcode.cukenfestes.todolist;
 
 import java.util.Objects;
 
-public class Task {
+public class Name {
     private String name;
 
-    public Task(String name) {
+    @SuppressWarnings("unused")
+    private Name() {
+    }
+
+    public Name(String name) {
         this.name = name;
     }
 
@@ -17,8 +21,8 @@ public class Task {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return Objects.equals(name, task.name);
+        Name name1 = (Name) o;
+        return Objects.equals(name, name1.name);
     }
 
     @Override

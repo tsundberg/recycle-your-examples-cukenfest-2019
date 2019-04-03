@@ -1,9 +1,6 @@
-package se.thinkcode.cukenfestes;
+package se.thinkcode.cukenfestes.todolist;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TodoList {
     private Database database;
