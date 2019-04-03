@@ -10,7 +10,15 @@ time (
         exit
     fi
 
+    if ! ./gradlew cucumber -Dseam=model -Ddatabase=sql; then
+        exit
+    fi
+
     if ! ./gradlew cucumber -Dseam=rest -Ddatabase=in-memory; then
+        exit
+    fi
+
+    if ! ./gradlew cucumber -Dseam=rest -Ddatabase=sql; then
         exit
     fi
 )

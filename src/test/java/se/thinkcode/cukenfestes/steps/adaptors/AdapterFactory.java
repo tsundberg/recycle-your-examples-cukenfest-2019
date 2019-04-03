@@ -2,6 +2,7 @@ package se.thinkcode.cukenfestes.steps.adaptors;
 
 import se.thinkcode.cukenfestes.infrastructure.InMemoryDatabase;
 import se.thinkcode.cukenfestes.todolist.Database;
+import se.thinkcode.cukenfestes.todolist.SqlDatabase;
 
 public class AdapterFactory {
 
@@ -23,9 +24,14 @@ public class AdapterFactory {
     }
 
     private Database getDatabase() {
-        DatabaseSeam seam = getDatabaseSeam();
-        if (seam.equals(new DatabaseSeam("in-memory"))) {
+        DatabaseSeam database = getDatabaseSeam();
+
+        if (database.equals(new DatabaseSeam("in-memory"))) {
             return new InMemoryDatabase();
+        }
+
+        if (database.equals(new DatabaseSeam("sql"))) {
+            return new SqlDatabase();
         }
 
         return new InMemoryDatabase();
