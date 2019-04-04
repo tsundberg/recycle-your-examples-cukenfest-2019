@@ -10,11 +10,11 @@ public class TodoList {
         this.database = database;
     }
 
-    public void addTask(Name owner, Task task) {
+    public void addTask(Owner owner, Task task) {
         database.addTask(owner, task);
     }
 
-    public List<Task> getTasks(Name owner) {
+    public List<Task> getTasks(Owner owner) {
         List<Task> tasks = database.getTasks(owner);
 
         if (tasks == null) {

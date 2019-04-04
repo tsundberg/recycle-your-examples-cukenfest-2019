@@ -2,14 +2,14 @@ package se.thinkcode.cukenfestes.todolist;
 
 import java.util.Objects;
 
-public class Name {
+public class Owner {
     private String name;
 
     @SuppressWarnings("unused")
-    private Name() {
+    private Owner() {
     }
 
-    public Name(String name) {
+    public Owner(String name) {
         this.name = name;
     }
 
@@ -21,8 +21,8 @@ public class Name {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Name name1 = (Name) o;
-        return Objects.equals(name, name1.name);
+        Owner owner1 = (Owner) o;
+        return Objects.equals(name, owner1.name);
     }
 
     @Override

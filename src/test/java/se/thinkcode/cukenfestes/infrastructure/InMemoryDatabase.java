@@ -1,7 +1,7 @@
 package se.thinkcode.cukenfestes.infrastructure;
 
 import se.thinkcode.cukenfestes.todolist.Database;
-import se.thinkcode.cukenfestes.todolist.Name;
+import se.thinkcode.cukenfestes.todolist.Owner;
 import se.thinkcode.cukenfestes.todolist.Task;
 
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 public class InMemoryDatabase implements Database {
-    private Map<Name, List<Task>> allTasks = new HashMap<>();
+    private Map<Owner, List<Task>> allTasks = new HashMap<>();
 
     @Override
-    public void addTask(Name owner, Task task) {
+    public void addTask(Owner owner, Task task) {
         List<Task> tasks = allTasks.getOrDefault(owner, new ArrayList<>());
         tasks.add(task);
 
@@ -21,7 +21,7 @@ public class InMemoryDatabase implements Database {
     }
 
     @Override
-    public List<Task> getTasks(Name owner) {
+    public List<Task> getTasks(Owner owner) {
         return allTasks.getOrDefault(owner, new ArrayList<>());
     }
 }

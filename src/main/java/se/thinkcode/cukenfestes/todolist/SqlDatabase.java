@@ -14,7 +14,7 @@ public class SqlDatabase implements Database {
     private DataSource datasource;
 
     @Override
-    public void addTask(Name owner, Task task) {
+    public void addTask(Owner owner, Task task) {
         try {
             TaskDAO dao = getTaskDAO();
 
@@ -31,7 +31,7 @@ public class SqlDatabase implements Database {
     }
 
     @Override
-    public List<Task> getTasks(Name owner) {
+    public List<Task> getTasks(Owner owner) {
         try {
             TaskDAO dao = getTaskDAO();
 

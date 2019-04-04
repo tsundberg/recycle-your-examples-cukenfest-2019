@@ -21,7 +21,7 @@ public class TodoListViewResource {
     @POST
     public TodoListView addTasks(@FormParam("owner") String ownerName,
                                  @FormParam("task") String taskDescription) {
-        Name owner = new Name(ownerName);
+        Owner owner = new Owner(ownerName);
 
         if (!taskDescription.isEmpty()) {
             Task task = new Task(taskDescription);

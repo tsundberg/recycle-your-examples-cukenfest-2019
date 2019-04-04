@@ -17,7 +17,7 @@ public class TodoResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response orderPickup(TodoItem todoItem) {
-        Name owner = todoItem.getOwner();
+        Owner owner = todoItem.getOwner();
         Task task = todoItem.getTask();
         todoList.addTask(owner, task);
 
@@ -27,7 +27,7 @@ public class TodoResource {
 
     @GET
     @Path("/{owner}")
-    public List<Task> getAllTasks(@PathParam("owner") Name owner) {
+    public List<Task> getAllTasks(@PathParam("owner") Owner owner) {
         return todoList.getTasks(owner);
     }
 }

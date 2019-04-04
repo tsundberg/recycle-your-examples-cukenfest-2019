@@ -6,20 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TodoListView extends View {
-    private Name owner;
+    private Owner owner;
     private List<Task> tasks = new ArrayList<>();
 
     TodoListView() {
         super("todoList.mustache");
     }
 
-    TodoListView(Name owner, List<Task> tasks) {
+    TodoListView(Owner owner, List<Task> tasks) {
         super("todoList.mustache");
         this.owner = owner;
         this.tasks = tasks;
     }
 
-    public Name getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 

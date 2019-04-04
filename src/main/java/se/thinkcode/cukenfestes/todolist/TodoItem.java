@@ -3,19 +3,19 @@ package se.thinkcode.cukenfestes.todolist;
 import java.util.Objects;
 
 public class TodoItem {
-    private Name owner;
+    private Owner owner;
     private Task task;
 
     @SuppressWarnings("unused")
     private TodoItem() {
     }
 
-    public TodoItem(Name owner, Task task) {
+    public TodoItem(Owner owner, Task task) {
         this.owner = owner;
         this.task = task;
     }
 
-    public Name getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 

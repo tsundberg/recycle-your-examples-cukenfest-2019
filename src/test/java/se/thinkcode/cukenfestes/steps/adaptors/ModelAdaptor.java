@@ -1,7 +1,7 @@
 package se.thinkcode.cukenfestes.steps.adaptors;
 
 import se.thinkcode.cukenfestes.todolist.Database;
-import se.thinkcode.cukenfestes.todolist.Name;
+import se.thinkcode.cukenfestes.todolist.Owner;
 import se.thinkcode.cukenfestes.todolist.Task;
 import se.thinkcode.cukenfestes.todolist.TodoList;
 
@@ -15,12 +15,12 @@ public class ModelAdaptor implements TodoAdapter {
     }
 
     @Override
-    public void addTask(Name owner, Task task) {
+    public void addTask(Owner owner, Task task) {
         todoList.addTask(owner, task);
     }
 
     @Override
-    public List<Task> getTasks(Name owner) {
+    public List<Task> getTasks(Owner owner) {
         return todoList.getTasks(owner);
     }
 }

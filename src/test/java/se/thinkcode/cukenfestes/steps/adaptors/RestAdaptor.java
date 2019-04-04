@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import se.thinkcode.cukenfestes.Main;
 import se.thinkcode.cukenfestes.todolist.Database;
-import se.thinkcode.cukenfestes.todolist.Name;
+import se.thinkcode.cukenfestes.todolist.Owner;
 import se.thinkcode.cukenfestes.todolist.Task;
 import se.thinkcode.cukenfestes.todolist.TodoItem;
 
@@ -39,7 +39,7 @@ public class RestAdaptor implements TodoAdapter {
     }
 
     @Override
-    public void addTask(Name owner, Task task) {
+    public void addTask(Owner owner, Task task) {
         Client jerseyClient = JerseyClientBuilder.createClient();
         TodoItem todoItem = new TodoItem(owner, task);
         String json = convertToJson(todoItem);
@@ -57,7 +57,7 @@ public class RestAdaptor implements TodoAdapter {
     }
 
     @Override
-    public List<Task> getTasks(Name owner) {
+    public List<Task> getTasks(Owner owner) {
         Client jerseyClient = JerseyClientBuilder.createClient();
 
         return jerseyClient
