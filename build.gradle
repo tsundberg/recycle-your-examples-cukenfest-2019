@@ -28,12 +28,15 @@ dependencies {
     implementation 'org.jdbi:jdbi3-sqlobject:3.6.0'
     implementation 'com.h2database:h2:1.4.199'
     implementation 'org.apache.tomcat:tomcat-jdbc:9.0.17'
-    
+
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.11.1'
-    
+
     testImplementation 'io.cucumber:cucumber-java:' + cucumberVersion
     testImplementation 'io.cucumber:cucumber-junit:' + cucumberVersion
+
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'org.seleniumhq.selenium:htmlunit-driver:2.34.0'
 }
 
 cucumber {
@@ -42,7 +45,7 @@ cucumber {
     plugin = ['progress']
 }
 
-test{
+test {
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
 }

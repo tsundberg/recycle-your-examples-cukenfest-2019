@@ -9,4 +9,6 @@ public interface TodoAdapter {
     void addTask(Owner owner, Task task);
 
     List<Task> getTasks(Owner owner);
+
+    void cleanUp();
 }

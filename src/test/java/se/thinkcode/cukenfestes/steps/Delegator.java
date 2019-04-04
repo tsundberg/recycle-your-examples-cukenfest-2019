@@ -29,4 +29,8 @@ class Delegator {
         Owner owner = new Owner(ownerName);
         return adapter.getTasks(owner);
     }
+
+    void cleanUp() {
+        adapter.cleanUp();
+    }
 }

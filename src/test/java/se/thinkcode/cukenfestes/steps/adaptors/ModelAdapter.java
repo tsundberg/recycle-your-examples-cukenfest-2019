@@ -23,4 +23,9 @@ public class ModelAdapter implements TodoAdapter {
     public List<Task> getTasks(Owner owner) {
         return todoList.getTasks(owner);
     }
+
+    @Override
+    public void cleanUp() {
+        // no op until we need to do something here
+    }
 }

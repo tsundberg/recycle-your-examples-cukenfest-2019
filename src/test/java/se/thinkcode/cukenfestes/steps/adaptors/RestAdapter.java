@@ -68,6 +68,11 @@ public class RestAdapter implements TodoAdapter {
                 });
     }
 
+    @Override
+    public void cleanUp() {
+        // no op until we need to do something here
+    }
+
     private String convertToJson(TodoItem todoItem) {
         try {
             return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(todoItem);

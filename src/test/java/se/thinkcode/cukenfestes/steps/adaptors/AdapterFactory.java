@@ -1,8 +1,15 @@
 package se.thinkcode.cukenfestes.steps.adaptors;
 
-import se.thinkcode.cukenfestes.todolist.InMemoryDatabase;
+import org.apache.commons.lang3.SystemUtils;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import se.thinkcode.cukenfestes.todolist.Database;
+import se.thinkcode.cukenfestes.todolist.InMemoryDatabase;
 import se.thinkcode.cukenfestes.todolist.SqlDatabase;
+
+import java.net.URL;
 
 public class AdapterFactory {
 
@@ -19,12 +26,17 @@ public class AdapterFactory {
             return new RestAdapter(database);
         }
 
-        System.err.println("No seam, database, device, or client specified. Will default to model in memory");
+        if (seam.equals(new Seam("web"))) {
+            WebDriver browser = getBrowser();
+            return new WebAdapter(browser, database);
+        }
+
+        System.err.println("No seam, database, browser, device, or client specified. Will default to model in memory");
         return new ModelAdapter(database);
     }
 
     private Database getDatabase() {
-        DatabaseSeam database = getDatabaseSeam();
+        DatabaseSeam database = getDatabaseName();
 
         if (database.equals(new DatabaseSeam("in-memory"))) {
             return new InMemoryDatabase();
@@ -35,6 +47,24 @@ public class AdapterFactory {
         }
 
         return new InMemoryDatabase();
+    }
+
+    private WebDriver getBrowser() {
+        BrowserSeam browserName = getBrowserName();
+
+        if (browserName.equals(new BrowserSeam("headless"))) {
+            return createHeadlessDriver();
+        }
+
+        if (browserName.equals(new BrowserSeam("firefox"))) {
+            return createFirefoxDriver();
+        }
+
+        if (browserName.equals(new BrowserSeam("chrome"))) {
+            return createChromeDriver();
+        }
+
+        throw new RuntimeException("Unknown browser: <" + browserName + ">");
     }
 
     private Seam getSeam() {
@@ -48,7 +78,7 @@ public class AdapterFactory {
         return new Seam(defaultSeam);
     }
 
-    private DatabaseSeam getDatabaseSeam() {
+    private DatabaseSeam getDatabaseName() {
         if (System.getProperty("database") != null) {
             String database = System.getProperty("database");
             return new DatabaseSeam(database);
@@ -59,4 +89,36 @@ public class AdapterFactory {
         return new DatabaseSeam(defaultDatabase);
     }
 
+    private BrowserSeam getBrowserName() {
+        if (System.getProperty("browser") != null) {
+            String browser = System.getProperty("browser");
+            return new BrowserSeam(browser);
+        }
+
+        String defaultBrowser = "html-unit";
+        System.err.println("No browser specified. Specify with -Dbrowser=<your database name> Will default to " + defaultBrowser);
+
+        return new BrowserSeam(defaultBrowser);
+    }
+
+    private WebDriver createHeadlessDriver() {
+        return new HtmlUnitDriver(true);
+    }
+
+    private WebDriver createFirefoxDriver() {
+        String osName = SystemUtils.OS_NAME;
+        URL url = getClass().getResource("/" + "osx" + "/geckodriver");
+        String geckoDriverPath = url.getFile();
+        System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+
+        return new FirefoxDriver();
+    }
+
+    private WebDriver createChromeDriver() {
+        URL url = getClass().getResource("/" + "osx" + "/chromedriver");
+        String chromedDriverPath = url.getFile();
+        System.setProperty("webdriver.chrome.driver", chromedDriverPath);
+
+        return new ChromeDriver();
+    }
 }

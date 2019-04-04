@@ -19,7 +19,7 @@
         <textarea name="task" id="task" rows="2" cols="30"></textarea>
     </div>
     <br>
-    <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit"/>
+    <input id="submit" type="submit" name="submit" value="Submit"/>
 </form>
 
 <hr>
@@ -28,7 +28,7 @@
 
 <ul>
     {{#tasks}}
-        <li>{{name}}</li>
+        <li id="taskElement">{{name}}</li>
     {{/tasks}}
 </ul>
 
