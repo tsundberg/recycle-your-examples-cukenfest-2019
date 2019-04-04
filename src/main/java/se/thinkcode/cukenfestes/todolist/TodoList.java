@@ -1,5 +1,6 @@
 package se.thinkcode.cukenfestes.todolist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TodoList {
@@ -14,6 +15,12 @@ public class TodoList {
     }
 
     public List<Task> getTasks(Name owner) {
-        return database.getTasks(owner);
+        List<Task> tasks = database.getTasks(owner);
+
+        if (tasks == null) {
+            return new ArrayList<>();
+        } else {
+            return tasks;
+        }
     }
 }

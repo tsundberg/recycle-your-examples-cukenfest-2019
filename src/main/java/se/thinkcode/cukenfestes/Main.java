@@ -4,9 +4,8 @@ import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import se.thinkcode.cukenfestes.todolist.Database;
-import se.thinkcode.cukenfestes.todolist.TodoList;
-import se.thinkcode.cukenfestes.todolist.TodoResource;
+import io.dropwizard.views.ViewBundle;
+import se.thinkcode.cukenfestes.todolist.*;
 
 public class Main extends Application<Configuration> {
     private Database database;
@@ -22,6 +21,7 @@ public class Main extends Application<Configuration> {
 
     @Override
     public void initialize(Bootstrap<Configuration> bootstrap) {
+        bootstrap.addBundle(new ViewBundle<>());
     }
 
     @Override
@@ -31,11 +31,14 @@ public class Main extends Application<Configuration> {
         TodoResource todoResource = new TodoResource(todoList);
 
         environment.jersey().register(todoResource);
+
+        TodoListViewResource todoListViewResource = new TodoListViewResource(todoList);
+        environment.jersey().register(todoListViewResource);
     }
 
     private Database getDatabase() {
         if (database == null) {
-            return null;
+            return new SqlDatabase();
         }
 
         return database;
