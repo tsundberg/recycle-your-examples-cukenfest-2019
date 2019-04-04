@@ -1,8 +1,4 @@
-package se.thinkcode.cukenfestes.infrastructure;
-
-import se.thinkcode.cukenfestes.todolist.Database;
-import se.thinkcode.cukenfestes.todolist.Owner;
-import se.thinkcode.cukenfestes.todolist.Task;
+package se.thinkcode.cukenfestes.todolist;
 
 import java.util.ArrayList;
 import java.util.HashMap;

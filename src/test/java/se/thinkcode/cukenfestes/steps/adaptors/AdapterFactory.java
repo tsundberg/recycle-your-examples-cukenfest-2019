@@ -1,6 +1,6 @@
 package se.thinkcode.cukenfestes.steps.adaptors;
 
-import se.thinkcode.cukenfestes.infrastructure.InMemoryDatabase;
+import se.thinkcode.cukenfestes.todolist.InMemoryDatabase;
 import se.thinkcode.cukenfestes.todolist.Database;
 import se.thinkcode.cukenfestes.todolist.SqlDatabase;
 
