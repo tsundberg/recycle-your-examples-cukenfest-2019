@@ -7,10 +7,10 @@ import se.thinkcode.cukenfestes.todolist.TodoList;
 
 import java.util.List;
 
-public class ModelAdaptor implements TodoAdapter {
+public class ModelAdapter implements TodoAdapter {
     private TodoList todoList;
 
-    ModelAdaptor(Database database) {
+    ModelAdapter(Database database) {
         todoList = new TodoList(database);
     }
 

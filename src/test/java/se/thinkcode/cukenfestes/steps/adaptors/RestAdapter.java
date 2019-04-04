@@ -19,10 +19,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class RestAdaptor implements TodoAdapter {
+public class RestAdapter implements TodoAdapter {
     private String targetUrl = "http://localhost:8080";
 
-    RestAdaptor(Database database) {
+    RestAdapter(Database database) {
         startApplication(database);
     }
 

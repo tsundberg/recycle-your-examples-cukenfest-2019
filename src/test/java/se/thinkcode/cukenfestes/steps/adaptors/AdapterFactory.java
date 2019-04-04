@@ -12,15 +12,15 @@ public class AdapterFactory {
         Seam seam = getSeam();
 
         if (seam.equals(new Seam("model"))) {
-            return new ModelAdaptor(database);
+            return new ModelAdapter(database);
         }
 
         if (seam.equals(new Seam("rest"))) {
-            return new RestAdaptor(database);
+            return new RestAdapter(database);
         }
 
         System.err.println("No seam, database, device, or client specified. Will default to model in memory");
-        return new ModelAdaptor(database);
+        return new ModelAdapter(database);
     }
 
     private Database getDatabase() {
