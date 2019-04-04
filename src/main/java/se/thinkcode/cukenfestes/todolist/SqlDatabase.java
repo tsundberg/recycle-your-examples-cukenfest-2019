@@ -22,7 +22,7 @@ public class SqlDatabase implements Database {
             String key = "" + random.nextLong();
 
             String ownerName = owner.getName();
-            String taskName = task.getName();
+            String taskName = task.getDescription();
 
             dao.add(key, ownerName, taskName);
         } catch (Exception e) {

@@ -28,7 +28,7 @@ public class WebAdapter implements TodoAdapter {
         ownerField.sendKeys(owner.getName());
 
         WebElement taskField = browser.findElement(By.id("task"));
-        taskField.sendKeys(task.getName());
+        taskField.sendKeys(task.getDescription());
 
         WebElement submitButton = browser.findElement(By.id("submit"));
         submitButton.click();

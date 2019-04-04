@@ -3,18 +3,18 @@ package se.thinkcode.cukenfestes.todolist;
 import java.util.Objects;
 
 public class Task {
-    private String name;
+    private String description;
 
     @SuppressWarnings("unused")
     private Task() {
     }
 
-    public Task(String name) {
-        this.name = name;
+    public Task(String description) {
+        this.description = description;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
     @Override
@@ -22,16 +22,16 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return Objects.equals(name, task.name);
+        return Objects.equals(description, task.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(description);
     }
 
     @Override
     public String toString() {
-        return name;
+        return description;
     }
 }
