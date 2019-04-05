@@ -1,21 +1,22 @@
 package se.thinkcode.cukenfestes.todolist;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TodoList {
-    private Database database;
-
-    public TodoList(Database database) {
-        this.database = database;
-    }
+    private Map<Owner, List<Task>> allTasks = new HashMap<>();
 
     public void addTask(Owner owner, Task task) {
-        database.addTask(owner, task);
+        List<Task> tasks = allTasks.getOrDefault(owner, new ArrayList<>());
+        tasks.add(task);
+
+        allTasks.put(owner, tasks);
     }
 
     public List<Task> getTasks(Owner owner) {
-        List<Task> tasks = database.getTasks(owner);
+        List<Task> tasks = allTasks.getOrDefault(owner, new ArrayList<>());
 
         if (tasks == null) {
             return new ArrayList<>();
