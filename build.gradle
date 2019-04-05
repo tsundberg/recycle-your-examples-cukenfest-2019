@@ -40,7 +40,7 @@ dependencies {
 }
 
 cucumber {
-    glue = 'classpath:se.thinkcode.cukenfestes'
+    glue = 'classpath:se.thinkcode.cukenfest'
     threads = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     plugin = ['progress']
 }
