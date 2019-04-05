@@ -76,7 +76,7 @@ class Delegator {
 }
 ```
 
-## Create the interface each adaptro much implement 
+## Create the interface each adapter much implement 
 
 ```
 package se.thinkcode.cukenfest.steps.adapters;
