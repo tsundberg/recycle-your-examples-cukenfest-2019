@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfestes.todolist;
+package se.thinkcode.cukenfest.todolist;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;

@@ -1,7 +1,7 @@
-package se.thinkcode.cukenfestes.steps.adaptors;
+package se.thinkcode.cukenfest.steps.adaptors;
 
-import se.thinkcode.cukenfestes.todolist.Owner;
-import se.thinkcode.cukenfestes.todolist.Task;
+import se.thinkcode.cukenfest.todolist.Owner;
+import se.thinkcode.cukenfest.todolist.Task;
 
 import java.util.List;
 

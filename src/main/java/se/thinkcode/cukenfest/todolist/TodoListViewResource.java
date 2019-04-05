@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfestes.todolist;
+package se.thinkcode.cukenfest.todolist;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

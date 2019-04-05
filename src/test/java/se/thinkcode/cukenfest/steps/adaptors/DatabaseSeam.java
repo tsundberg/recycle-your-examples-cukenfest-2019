@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfestes.steps.adaptors;
+package se.thinkcode.cukenfest.steps.adaptors;
 
 import java.util.Objects;
 

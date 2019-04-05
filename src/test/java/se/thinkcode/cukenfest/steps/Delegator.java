@@ -1,9 +1,9 @@
-package se.thinkcode.cukenfestes.steps;
+package se.thinkcode.cukenfest.steps;
 
-import se.thinkcode.cukenfestes.steps.adaptors.AdapterFactory;
-import se.thinkcode.cukenfestes.steps.adaptors.TodoAdapter;
-import se.thinkcode.cukenfestes.todolist.Owner;
-import se.thinkcode.cukenfestes.todolist.Task;
+import se.thinkcode.cukenfest.steps.adaptors.AdapterFactory;
+import se.thinkcode.cukenfest.steps.adaptors.TodoAdapter;
+import se.thinkcode.cukenfest.todolist.Owner;
+import se.thinkcode.cukenfest.todolist.Task;
 
 import java.util.List;
 
