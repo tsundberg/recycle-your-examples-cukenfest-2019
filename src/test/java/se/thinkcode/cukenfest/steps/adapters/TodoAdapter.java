@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfest.steps.adaptors;
+package se.thinkcode.cukenfest.steps.adapters;
 
 import se.thinkcode.cukenfest.todolist.Owner;
 import se.thinkcode.cukenfest.todolist.Task;

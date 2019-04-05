@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfest.steps.adaptors;
+package se.thinkcode.cukenfest.steps.adapters;
 
 import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.WebDriver;

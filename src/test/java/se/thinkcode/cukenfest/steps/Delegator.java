@@ -1,7 +1,7 @@
 package se.thinkcode.cukenfest.steps;
 
-import se.thinkcode.cukenfest.steps.adaptors.AdapterFactory;
-import se.thinkcode.cukenfest.steps.adaptors.TodoAdapter;
+import se.thinkcode.cukenfest.steps.adapters.AdapterFactory;
+import se.thinkcode.cukenfest.steps.adapters.TodoAdapter;
 import se.thinkcode.cukenfest.todolist.Owner;
 import se.thinkcode.cukenfest.todolist.Task;
 

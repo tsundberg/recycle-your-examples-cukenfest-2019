@@ -1,4 +1,4 @@
-package se.thinkcode.cukenfest.steps.adaptors;
+package se.thinkcode.cukenfest.steps.adapters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
